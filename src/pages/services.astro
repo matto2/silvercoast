@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import photo1 from "../assets/photo1.jpg";
+import { Image } from "astro:assets";
+import Nav from "../components/Nav.astro";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+  <Nav currentPage="services" />
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div class="grid place-content-center">
+      <h1
+        class="text-5xl md:text-7xl text-left pb-0 font-bold text-red-400 font-serif"
+      >
+        Active, Balanced & Strong
+      </h1>
+      <h3 class="text-3xl md:text-3xl text-left text-slate-400 font-sans mb-6">
+        (At Any Age)
+      </h3>
+      <p class="md:text-xl text-left">
+        At Silver Coast Fitness, we help older adults in the Monterey Bay area
+        stay active and independent through personalized exercise programs. Our
+        focus on strength, flexibility, and balance training ensures you move
+        better and enjoy life to the fullest. Join our supportive community and
+        take the first step towards a healthier, more vibrant you today!
+      </p>
+    </div>
+    <div class="pt-6 pb-6">
+      <Image
+        src={photo1}
+        alt="photo1"
+        class="w-full h-full object-cover max-h-108"
+      />
+    </div>
+  </div>
+</Layout>
