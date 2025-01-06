@@ -14,3 +14,12 @@
     @apply font-serif font-bold;
   }
 }
+
+:root {
+  --brand-primary: #A8A29E;
+  --brand-secondary: #BE123C;
+  --brand-accent: #005A9C;
+  --text-light: #F5F5F4;
+  --text-medium: #78716C;
+  --text-dark: #44403C;
+}

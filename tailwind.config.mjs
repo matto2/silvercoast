@@ -6,7 +6,19 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Source Serif Pro"', ...defaultTheme.fontFamily.serif],
+        serif: ['"Source Serif Pro"', ...defaultTheme.fontFamily.serif], 
+      },
+      colors: {
+        brand: {
+          primary: 'var(--brand-primary)', // Maps to --brand-primary
+          secondary: 'var(--brand-secondary)', // Maps to --brand-secondary
+          accent: 'var(--brand-accent)', // Maps to --brand-accent
+        },
+        text: {
+          light: 'var(--text-light)',
+          medium: 'var(--text-medium)', // Maps to --text-light
+          dark: 'var(--text-dark)', // Maps to --text-dark
+        },
       },
     },
   },
