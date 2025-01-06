@@ -31,14 +31,16 @@ import Button from "../components/Button.astro";
         better and enjoy life to the fullest. Join our supportive community and
         take the first step towards a healthier, more vibrant you today!
       </p>
-      <Button text="Contact Us" link="/contact" />
+      <Button text="Contact Us for a Free Consultation" link="/contact" />
     </div>
 
     <div class="mask-blob w-full h-full">
       <Image src={photo1} alt="photo1" class="w-full h-full object-cover" />
     </div>
   </div>
-  <h2 class="text-center text-3xl md:text-5xl font-bold mt-16 text-text-dark">
+  <h2
+    class="text-center text-4xl md:text-5xl font-bold mt-16 text-brand-primary"
+  >
     Our Services
   </h2>
 
@@ -65,4 +67,11 @@ import Button from "../components/Button.astro";
       text="We offer targeted exercise strategies to help manage and alleviate chronic pain, allowing you to move more freely and comfortably. Our compassionate approach ensures that every session caters to your comfort level."
     />
   </section>
+
+  <div class="bg-stone-200 rounded-3xl grid place-items-center p-20">
+    <h2 class="text-center text-4xl md:text-4xl font-bold text-text-medium">
+      Empower your journey to strength and vitality!
+    </h2>
+    <Button text="Contact Us for a Free Consultation" link="/contact" />
+  </div>
 </Layout>

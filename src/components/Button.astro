@@ -4,8 +4,8 @@ const { text, link } = Astro.props;
 
 <a href={link}>
   <button
-    class="bg-brand-secondary text-text-light font-bold py-2 px-16 rounded-full hover:bg-text-dark py-3 my-8 md:max-w-60 w-full"
+    class="bg-brand-secondary text-text-light font-bold py-2 px-16 rounded-full hover:bg-text-dark py-3 my-8 md:w-auto w-full"
   >
-    Contact Us
+    {text}
   </button>
 </a>
