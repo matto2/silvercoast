@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import photo1 from "../assets/photo1.jpg";
 import { Image } from "astro:assets";
+import photo1 from "../assets/photo1.jpg";
 import Nav from "../components/Nav.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -10,30 +10,48 @@ import Nav from "../components/Nav.astro";
 
 <Layout>
   <Nav currentPage="gallery" />
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-    <div class="grid place-content-center">
-      <h1
-        class="text-5xl md:text-7xl text-left pb-0 font-bold text-brand-secondary font-serif"
-      >
-        Active, Balanced & Strong
-      </h1>
-      <h3 class="text-3xl md:text-3xl text-left text-stone-400 font-sans mb-6">
-        (At Any Age)
-      </h3>
-      <p class="md:text-xl text-left">
-        At Silver Coast Fitness, we help older adults in the Monterey Bay area
-        stay active and independent through personalized exercise programs. Our
-        focus on strength, flexibility, and balance training ensures you move
-        better and enjoy life to the fullest. Join our supportive community and
-        take the first step towards a healthier, more vibrant you today!
-      </p>
-    </div>
-    <div class="pt-6 pb-6">
-      <Image
-        src={photo1}
-        alt="photo1"
-        class="w-full h-full object-cover max-h-108"
-      />
-    </div>
+  <div
+    class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:mt-12 mt-0"
+  >
+    <a
+      data-fslightbox="gallery"
+      data-caption="beach yoga"
+      href="/photo1.jpg"
+      id="openLightboxButton"
+    >
+      <Image src={photo1} alt="photo" class="w-full" />
+    </a>
+    <a
+      data-fslightbox="gallery"
+      data-caption="beach yoga"
+      href="/photo1.jpg"
+      id="openLightboxButton"
+    >
+      <Image src={photo1} alt="photo" class="w-full" />
+    </a>
+    <a
+      data-fslightbox="gallery"
+      data-caption="beach yoga"
+      href="/photo1.jpg"
+      id="openLightboxButton"
+    >
+      <Image src={photo1} alt="photo" class="w-full" />
+    </a>
+    <a
+      data-fslightbox="gallery"
+      data-caption="beach yoga"
+      href="/photo1.jpg"
+      id="openLightboxButton"
+    >
+      <Image src={photo1} alt="photo" class="w-full" />
+    </a>
+    <a
+      data-fslightbox="gallery"
+      data-caption="beach yoga"
+      href="/photo1.jpg"
+      id="openLightboxButton"
+    >
+      <Image src={photo1} alt="photo" class="w-full" />
+    </a>
   </div>
 </Layout>

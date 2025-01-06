@@ -1,10 +1,8 @@
 @import "@fontsource/source-serif-pro/600.css";
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 @layer base {
   h1,
@@ -18,10 +16,10 @@
 }
 
 :root {
-  --brand-primary: #A8A29E;
-  --brand-secondary: #BE123C;
-  --brand-accent: #005A9C;
-  --text-light: #F5F5F4;
-  --text-medium: #78716C;
-  --text-dark: #44403C;
+  --brand-primary: #a8a29e;
+  --brand-secondary: #be123c;
+  --brand-accent: #005a9c;
+  --text-light: #f5f5f4;
+  --text-medium: #78716c;
+  --text-dark: #44403c;
 }
