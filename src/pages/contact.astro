@@ -12,6 +12,11 @@ import Nav from "../components/Nav.astro";
     netlify
     class="space-y-6 p-6 bg-text-light rounded-xl max-w-md mx-auto"
   >
+    <p class="hidden">
+      <label>
+        Don’t fill this out if you’re human: <input name="bot-field" />
+      </label>
+    </p>
     <!-- Name Input -->
     <div class="flex flex-col">
       <label for="name" class="text-gray-700 font-semibold mb-2">Name</label>
