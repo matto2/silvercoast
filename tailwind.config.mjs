@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Source Serif Pro"', ...defaultTheme.fontFamily.serif], 
+        serif: ['"Platypi Variable"', ...defaultTheme.fontFamily.serif], 
       },
       colors: {
         brand: {

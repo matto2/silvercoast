@@ -1,4 +1,5 @@
 @import "@fontsource/source-serif-pro/600.css";
+@import "@fontsource-variable/platypi";
 
 @tailwind base;
 @tailwind components;

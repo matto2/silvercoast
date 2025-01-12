@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.4",
+    "@fontsource-variable/platypi": "^5.1.1",
     "@fontsource/source-serif-pro": "^5.1.0",
     "astro": "^5.1.5",
     "astro-icon": "^1.1.5",
