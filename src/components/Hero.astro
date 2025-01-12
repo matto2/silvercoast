@@ -1,0 +1,28 @@
+---
+import Button from "./Button.astro";
+import { Image } from "astro:assets";
+const { headline, text, photo1, buttontext, buttonlink } = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+  <div class="grid place-content-center">
+    <h1
+      class="text-6xl md:text-8xl text-center md:text-left pb-0 font-bold text-brand-secondary font-serif mb-8 md:mt-12"
+    >
+      {headline}
+    </h1>
+    <!-- <h3
+        class="text-3xl md:text-3xl text-left text-brand-primary font-sans mb-6"
+      >
+        (At Any Age)
+      </h3> -->
+    <p class="text-lg md:text-xl text-left text-text-medium">
+      {text}
+    </p>
+    <Button text={buttontext} link={buttonlink} />
+  </div>
+
+  <div class="mask-blob w-full h-full">
+    <Image src={photo1} alt="photo1" class="w-full h-full object-cover" />
+  </div>
+</div>

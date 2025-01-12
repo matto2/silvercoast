@@ -5,39 +5,28 @@ import { Image } from "astro:assets";
 import Nav from "../components/Nav.astro";
 import Card from "../components/Card.astro";
 import Button from "../components/Button.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BigContactCard from "../components/BigContactCard.astro";
+import Hero from "../components/Hero.astro";
+import ReviewCard from "../components/ReviewCard.astro";
+import biopic from "../assets/photo1.jpg";
 ---
 
 <Layout>
   <Nav currentPage="home" />
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-    <div class="grid place-content-center">
-      <h1
-        class="text-5xl md:text-7xl text-left pb-0 font-bold text-brand-secondary font-serif mb-8 md:mt-12"
-      >
-        Active, Balanced, & Strong
-      </h1>
-      <!-- <h3
-        class="text-3xl md:text-3xl text-left text-brand-primary font-sans mb-6"
-      >
-        (At Any Age)
-      </h3> -->
-      <p class="md:text-xl text-left text-text-medium">
-        At Silver Coast Fitness, we help older adults in the Monterey Bay area
-        stay active and independent through personalized exercise programs. Our
-        focus on strength, flexibility, and balance training ensures you move
-        better and enjoy life to the fullest. Join our supportive community and
-        take the first step towards a healthier, more vibrant you today!
-      </p>
-      <Button text="Contact Us for a Free Consultation" link="/contact" />
-    </div>
 
-    <div class="mask-blob w-full h-full">
-      <Image src={photo1} alt="photo1" class="w-full h-full object-cover" />
-    </div>
-  </div>
+  <Hero
+    headline="Active, Strong, and Balanced"
+    text={`At Silver Coast Fitness, we help older adults in the Monterey Bay area
+    stay active and independent through personalized exercise programs. Our
+    focus on strength, flexibility, and balance training ensures you move
+    better and enjoy life to the fullest. Join our supportive community and
+    take the first step towards a healthier, more vibrant you today!`}
+    `
+    photo1={photo1}
+    buttontext="Contact Us for a Free Consultation!"
+    buttonlink="/contact"
+  />
+
   <h2
     class="text-center text-4xl md:text-5xl font-bold mt-16 text-brand-primary"
   >
@@ -68,12 +57,40 @@ import Button from "../components/Button.astro";
     />
   </section>
 
-  <div class="bg-stone-200 rounded-3xl grid place-items-center p-4">
-    <h2
-      class="text-center text-4xl md:text-4xl font-bold text-text-medium max-w-120 mt-4"
-    >
-      Empower your journey to strength and vitality!
-    </h2>
-    <Button text="Contact Us for a Free Consultation" link="/contact" />
-  </div>
+  <h2
+    class="text-center text-4xl md:text-5xl font-bold mt-4 text-brand-primary"
+  >
+    Customer Reviews
+  </h2>
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+    <ReviewCard
+      reviewhead="Feeling way better!"
+      photo1={photo1}
+      alt="stuff here"
+      text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas.`}
+      name="John Doe"
+      biotitle="Owner"
+    />
+    <ReviewCard
+      reviewhead="Feeling way better!"
+      photo1={photo1}
+      alt="stuff here"
+      text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas.`}
+      name="John Doe"
+      biotitle="Owner"
+    />
+    <ReviewCard
+      reviewhead="Feeling way better!"
+      photo1={photo1}
+      alt="stuff here"
+      text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas.`}
+      name="John Doe"
+      biotitle="Owner"
+    />
+  </section>
+
+  <BigContactCard
+    title="Get Started Today!"
+    text="Contact Us for a Free Consultation"
+  />
 </Layout>
