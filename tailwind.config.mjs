@@ -12,7 +12,8 @@ export default {
         brand: {
           primary: 'var(--brand-primary)', // Maps to --brand-primary
           secondary: 'var(--brand-secondary)', // Maps to --brand-secondary
-          accent: 'var(--brand-accent)', // Maps to --brand-accent
+          accent: 'var(--brand-accent)',
+          secondaryDark: 'var(--brand-secondaryDark)', // Maps to --brand-accent
         },
         text: {
           light: 'var(--text-light)',

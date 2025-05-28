@@ -9,6 +9,9 @@ import BigContactCard from "../components/BigContactCard.astro";
 import Hero from "../components/Hero.astro";
 import ReviewCard from "../components/ReviewCard.astro";
 import biopic from "../assets/photo1.jpg";
+import pain from "../assets/pain.jpg";
+import personal from "../assets/personal.jpg";
+import group from "../assets/group.jpg";
 ---
 
 <Layout>
@@ -36,21 +39,21 @@ import biopic from "../assets/photo1.jpg";
   <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-6">
     <!-- Block 1 -->
     <Card
-      img={photo1}
+      img={group}
       alt="stuff here"
       title="Small Group Classes"
       text="Join our small group classes for a supportive and social fitness experience. Connect with others while staying active and motivated in a friendly environment."
     />
     <!-- Block 2 -->
     <Card
-      img={photo1}
+      img={personal}
       alt="stuff here"
       title="Personalized Exercise Programs"
       text="Our personalized exercise programs are designed specifically for older adults to enhance strength, flexibility, and overall vitality. Experience tailored workouts that meet your unique goals and needs."
     />
     <!-- Block 3 -->
     <Card
-      img={photo1}
+      img={pain}
       alt="stuff here"
       title="Pain Management"
       text="We offer targeted exercise strategies to help manage and alleviate chronic pain, allowing you to move more freely and comfortably. Our compassionate approach ensures that every session caters to your comfort level."
@@ -62,30 +65,21 @@ import biopic from "../assets/photo1.jpg";
   >
     Customer Reviews
   </h2>
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+  <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-6">
     <ReviewCard
       reviewhead="Feeling way better!"
-      photo1={photo1}
-      alt="stuff here"
-      text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas.`}
-      name="John Doe"
-      biotitle="Owner"
+      text="Silver Coast Fitness has transformed my fitness journey. The personalized programs are exactly what I needed to stay active and independent."
+      name="John D."
     />
     <ReviewCard
-      reviewhead="Feeling way better!"
-      photo1={photo1}
-      alt="stuff here"
-      text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas.`}
-      name="John Doe"
-      biotitle="Owner"
+      reviewhead="Incredible support!"
+      text="Tamra's expertise and dedication have made a huge difference in my recovery. I'm stronger and more confident than ever."
+      name="Sarah M."
     />
     <ReviewCard
-      reviewhead="Feeling way better!"
-      photo1={photo1}
-      alt="stuff here"
-      text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas.`}
-      name="John Doe"
-      biotitle="Owner"
+      reviewhead="Life-changing experience!"
+      text="The small group classes are fun and motivating. I've met great people and improved my overall health significantly."
+      name="Michael R."
     />
   </section>
 

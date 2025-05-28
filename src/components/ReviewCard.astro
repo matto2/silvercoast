@@ -31,17 +31,7 @@ import { Icon } from "astro-icon/components";
       ))
     }
   </div> -->
-  <p class="text-text-dark text-lg font-bold leading-6 mt-6">{reviewhead}</p>
-  <p class="text-text-medium leading-6 mt-4">{text}</p>
-  <div class="grid grid-cols-2 items-center">
-    <Image
-      src={photo1}
-      alt={alt}
-      class="w-14 h-14 md:w-20 md:h-20 rounded-full mt-4 mr-4"
-    />
-    <div>
-      <p class="text-lg font-bold mt-4 text-text-dark">{name}</p>
-      <p class="text-text-medium">{biotitle}</p>
-    </div>
-  </div>
+  <p class="text-xl font-bold mt-4 text-text-dark">{reviewhead}</p>
+  <p class="text-text-medium mt-2">{text}</p>
+  <p class="text-text-medium mt-2">{name}</p>
 </div>

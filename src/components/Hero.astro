@@ -11,18 +11,15 @@ const { headline, text, photo1, buttontext, buttonlink } = Astro.props;
     >
       {headline}
     </h1>
-    <!-- <h3
-        class="text-3xl md:text-3xl text-left text-brand-primary font-sans mb-6"
-      >
-        (At Any Age)
-      </h3> -->
+    <div class="block md:hidden mask-blob w-full h-full mb-6">
+      <Image src={photo1} alt="photo1" class="w-full h-full object-cover" />
+    </div>
     <p class="text-lg md:text-xl text-left text-text-medium">
       {text}
     </p>
     <Button text={buttontext} link={buttonlink} />
   </div>
-
-  <div class="mask-blob w-full h-full">
+  <div class="hidden md:block mask-blob w-full h-full">
     <Image src={photo1} alt="photo1" class="w-full h-full object-cover" />
   </div>
 </div>
