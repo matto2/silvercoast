@@ -1,6 +1,6 @@
 ---
 import Button from "./Button.astro";
-const { headline, text, photo1, buttontext, buttonlink } = Astro.props;
+const { headline, subhead, text, photo1, buttontext, buttonlink } = Astro.props;
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -10,6 +10,13 @@ const { headline, text, photo1, buttontext, buttonlink } = Astro.props;
     >
       {headline}
     </h1>
+    {
+      subhead && (
+        <h2 class="text-2xl md:text-3xl text-center md:text-left pb-0 font-semibold text-brand-primary mb-6">
+          {subhead}
+        </h2>
+      )
+    }
     <div class="block md:hidden mask-blob w-full h-full mb-6">
       <img src={photo1.src} alt="photo1" class="w-full h-full object-cover" />
     </div>
