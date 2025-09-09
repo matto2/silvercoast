@@ -1,6 +1,5 @@
 ---
 import Button from "./Button.astro";
-import { Image } from "astro:assets";
 const { headline, text, photo1, buttontext, buttonlink } = Astro.props;
 ---
 
@@ -12,7 +11,7 @@ const { headline, text, photo1, buttontext, buttonlink } = Astro.props;
       {headline}
     </h1>
     <div class="block md:hidden mask-blob w-full h-full mb-6">
-      <Image src={photo1} alt="photo1" class="w-full h-full object-cover" />
+      <img src={photo1.src} alt="photo1" class="w-full h-full object-cover" />
     </div>
     <p class="text-lg md:text-xl text-left text-text-medium">
       {text}
@@ -20,6 +19,6 @@ const { headline, text, photo1, buttontext, buttonlink } = Astro.props;
     <Button text={buttontext} link={buttonlink} />
   </div>
   <div class="hidden md:block mask-blob w-full h-full">
-    <Image src={photo1} alt="photo1" class="w-full h-full object-cover" />
+    <img src={photo1.src} alt="photo1" class="w-full h-full object-cover" />
   </div>
 </div>

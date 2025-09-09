@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
 import photo1 from "../assets/photo1.jpg";
 import Nav from "../components/Nav.astro";
 
@@ -19,7 +18,7 @@ import Nav from "../components/Nav.astro";
       href="/photo1.jpg"
       id="openLightboxButton"
     >
-      <Image src={photo1} alt="photo" class="w-full" />
+      <img src={photo1.src} alt="photo" class="w-full" />
     </a>
     <a
       data-fslightbox="gallery"
@@ -27,7 +26,7 @@ import Nav from "../components/Nav.astro";
       href="/photo1.jpg"
       id="openLightboxButton"
     >
-      <Image src={photo1} alt="photo" class="w-full" />
+      <img src={photo1.src} alt="photo" class="w-full" />
     </a>
     <a
       data-fslightbox="gallery"
@@ -35,7 +34,7 @@ import Nav from "../components/Nav.astro";
       href="/photo1.jpg"
       id="openLightboxButton"
     >
-      <Image src={photo1} alt="photo" class="w-full" />
+      <img src={photo1.src} alt="photo" class="w-full" />
     </a>
     <a
       data-fslightbox="gallery"
@@ -43,7 +42,7 @@ import Nav from "../components/Nav.astro";
       href="/photo1.jpg"
       id="openLightboxButton"
     >
-      <Image src={photo1} alt="photo" class="w-full" />
+      <img src={photo1.src} alt="photo" class="w-full" />
     </a>
     <a
       data-fslightbox="gallery"
@@ -51,7 +50,7 @@ import Nav from "../components/Nav.astro";
       href="/photo1.jpg"
       id="openLightboxButton"
     >
-      <Image src={photo1} alt="photo" class="w-full" />
+      <img src={photo1.src} alt="photo" class="w-full" />
     </a>
   </div>
 </Layout>

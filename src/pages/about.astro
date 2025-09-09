@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
 import biopic from "../assets/tamra.png";
 import Nav from "../components/Nav.astro";
 import { Icon } from "astro-icon/components";
@@ -29,8 +28,8 @@ const pageTitle = "About";
   <div class="max-w-5xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-auto">
       <div class="grid place-content-center">
-        <Image
-          src={biopic}
+        <img
+          src={biopic.src}
           alt="tamra-pic"
           class="w-60 h-60 md:w-80 md:h-80 rounded-full mx-auto md:mt-20"
         />
