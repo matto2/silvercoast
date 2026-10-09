@@ -1,5 +1,6 @@
 ---
 import { navItems } from "../lib/nav";
+import ContactLinks from "./ContactLinks.astro";
 ---
 
 <footer class="bg-brand-secondary text-text-light text-sm py-6 mt-12">
@@ -20,6 +21,8 @@ import { navItems } from "../lib/nav";
         }
       </ul>
     </nav>
+
+    <ContactLinks class="justify-center text-base" />
 
     <p>
       &copy; {new Date().getFullYear()} Silver Coast Fitness. All rights reserved.
