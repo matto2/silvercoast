@@ -2,18 +2,19 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Button from "../components/Button.astro";
 import BigContactCard from "../components/BigContactCard.astro";
 import Hero from "../components/Hero.astro";
 import Testimonials from "../components/Testimonials.astro";
 import { contact } from "../lib/contact";
 
-// Home page photos: replace these files with real class photos using the
+// Home page photos: replace these files with real session photos using the
 // same file names, or point an import at a new file.
 import heroPhoto from "../assets/home/hero.jpg";
 import movementPhoto from "../assets/home/class-movement.jpg";
 import walkingPhoto from "../assets/home/class-walking.jpg";
 import strengthPhoto from "../assets/home/class-strength.jpg";
-import tamraPhoto from "../assets/tamra.png";
+import tamraPhoto from "../assets/tamra.jpg";
 
 const towns = ["Santa Cruz", "Capitola", "Aptos", "Soquel", "Scotts Valley"];
 
@@ -40,44 +41,52 @@ const localBusiness = {
 
   <Hero
     headline="Move Well. Feel Strong."
-    text="Friendly movement classes for older adults in Santa Cruz, Capitola, Aptos, Soquel, and Scotts Valley, with a focus on walking, gentle strength and balance exercises, and building an active routine."
-    subtext="Whether you’re joining for yourself or helping a parent find a class, Silver Coast Fitness offers encouragement to keep moving at a comfortable pace."
+    text="Friendly, one-on-one movement sessions for older adults in Santa Cruz, Capitola, Aptos, Soquel, and Scotts Valley, with a focus on walking, gentle strength and balance exercises, and building an active routine."
+    subtext="Whether you’re joining for yourself or helping a parent find the right fit, Silver Coast Fitness offers encouragement to keep moving at a comfortable pace."
     photo={heroPhoto}
     alt="Older woman doing a standing side stretch on a beach, guided by an instructor"
-    buttontext="Explore Our Classes"
-    buttonlink="#classes"
+    buttontext="See How It Works"
+    buttonlink="#sessions"
   />
 
   <h2
-    id="classes"
+    id="sessions"
     class="text-center text-4xl md:text-5xl font-bold mt-16 text-brand-primary scroll-mt-8"
   >
-    Our Classes
+    One-on-One Sessions
   </h2>
+  <p class="text-center text-lg md:text-xl leading-relaxed text-text-medium max-w-prose mx-auto mt-4 px-6">
+    Every session is just you and Tamra, built around your goals, your pace,
+    and the activities you enjoy.
+  </p>
 
   <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-6">
     <!-- Block 1 -->
     <Card
       img={movementPhoto}
-      alt="Older man and a woman stretching their arms overhead together during an indoor exercise class"
-      title="Movement Classes"
-      text="Friendly classes built around simple, everyday movement. Come for the exercise, enjoy the company, and move at a pace that feels comfortable to you."
+      alt="Older man and a woman stretching their arms overhead together during an indoor exercise session"
+      title="Movement Made Simple"
+      text="Personal sessions focused on simple, everyday movement. We'll start where you are, move at a pace that feels comfortable, and build a routine you can keep up between visits."
     />
     <!-- Block 2 -->
     <Card
       img={walkingPhoto}
       alt="Smiling older couple standing in a garden, each holding a rolled-up exercise mat"
       title="Walking & Everyday Activity"
-      text="Walking is one of the simplest ways to stay active. Get encouragement and general guidance on making walking and everyday movement a regular part of your week, in a way that fits your interests."
+      text="Walking is one of the simplest ways to stay active. Get encouragement and practical ideas for making walking and everyday movement a regular part of your week, in a way that fits your life."
     />
     <!-- Block 3 -->
     <Card
       img={strengthPhoto}
       alt="Smiling older man in a blue t-shirt lifting a pair of light hand weights"
-      title="Strength & Balance"
-      text="Gentle strength and balance exercises that relate to the things you do every day, like getting up from a chair or carrying groceries. Exercises can be adjusted to suit you."
+      title="Strength & Balance for Daily Life"
+      text="Gentle strength and balance exercises tied to the things you do every day, like getting up from a chair, climbing stairs, or carrying groceries. Every exercise is adjusted to suit you."
     />
   </section>
+
+  <div class="text-center px-6">
+    <Button text="Ask About a Session" link="/contact" />
+  </div>
 
   <section class="max-w-3xl mx-auto px-6 mt-12 mb-8">
     <h2
@@ -91,7 +100,7 @@ const localBusiness = {
       you’d simply enjoy some company and encouragement.
     </p>
     <p class="text-lg md:text-xl leading-relaxed text-text-medium max-w-prose mx-auto">
-      Our movement classes offer a welcoming way to add activity to your week,
+      One-on-one sessions offer a welcoming way to add activity to your week,
       with simple exercises and general guidance focused on everyday movement.
     </p>
   </section>
@@ -115,8 +124,8 @@ const localBusiness = {
       <p class="text-lg md:text-xl leading-relaxed text-text-medium max-w-prose">
         Tamra is a Physical Therapist Assistant with over 30 years of
         experience, including 15 years in home health care. In 2023, she
-        founded Silver Coast Fitness to offer friendly movement classes for
-        older adults.
+        founded Silver Coast Fitness to offer friendly, one-on-one movement
+        sessions for older adults.
       </p>
       <a
         href="/about"
@@ -131,12 +140,12 @@ const localBusiness = {
 
   <BigContactCard
     title="Looking for an activity your parent will enjoy?"
-    text="Ask About Our Classes"
+    text="Ask About Sessions for a Parent"
   >
     <div class="max-w-prose px-2 md:px-0 mt-6">
       <p class="text-lg md:text-xl leading-relaxed text-text-medium mb-4">
-        You may be looking for a friendly class that encourages your parent to
-        move more, enjoy company, and build a regular routine.
+        You may be looking for a friendly, personal way to help your parent move
+        more, feel steadier, and build a regular routine.
       </p>
       <p class="text-lg md:text-xl leading-relaxed text-text-medium">
         Silver Coast Fitness welcomes inquiries from family members, while
@@ -146,7 +155,7 @@ const localBusiness = {
   </BigContactCard>
 
   <p class="max-w-prose mx-auto px-6 mt-4 text-center text-lg text-text-dark">
-    Silver Coast Fitness provides movement classes and general fitness
+    Silver Coast Fitness provides one-on-one movement sessions and general fitness
     guidance—not physical therapy, rehabilitation, or medical care.
   </p>
 </Layout>

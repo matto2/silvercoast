@@ -8,7 +8,7 @@ export type Testimonial = {
 
 export const testimonials: Testimonial[] = [
   // {
-  //   quote: "I look forward to class every week.",
+  //   quote: "I look forward to my session every week.",
   //   name: "Linda M.",
   //   descriptor: "participant",
   // },
