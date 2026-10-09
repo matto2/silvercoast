@@ -3,6 +3,7 @@ const { currentPage } = Astro.props; // Pass the current page as a prop
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
+  { name: "Health Tips", href: "/health-tips" },
   { name: "Contact", href: "/contact" },
 ];
 ---
@@ -35,6 +36,12 @@ const navItems = [
       class={currentPage === "about"
         ? "font-bold text-brand-secondary"
         : "text-text-dark"}>About</a
+    >
+    <a
+      href="/health-tips"
+      class={currentPage === "health-tips"
+        ? "font-bold text-brand-secondary"
+        : "text-text-dark"}>Health Tips</a
     >
     <a
       href="/contact"

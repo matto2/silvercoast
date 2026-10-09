@@ -1,0 +1,11 @@
+---
+import Layout from "./Layout.astro";
+import Nav from "../components/Nav.astro";
+
+const { title } = Astro.props;
+---
+
+<Layout>
+  <Nav currentPage="health-tips" />
+  <slot />
+</Layout>

@@ -1,0 +1,58 @@
+---
+import Layout from "../../layouts/Base.astro";
+import { getCollection, render } from "astro:content";
+import { formatDate } from "../../lib/formatDate";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts
+    .filter((p) => !p.data.draft)
+    .map((p) => ({ params: { slug: p.id }, props: p }));
+}
+
+const post = Astro.props;
+const { data } = post;
+const { Content } = await render(post);
+const canonical = new URL(Astro.request.url);
+---
+
+<Layout title={`${data.title} | Health Tips`}>
+  <article class="prose mx-auto px-6 py-12">
+    <header class="mb-6">
+      <h1 class="mb-2">{data.title}</h1>
+      <p class="text-slate-600">
+        <time datetime={data.pubDate.toISOString()}
+          >{formatDate(data.pubDate)}</time
+        >
+        {data.updatedDate && <> · Updated {formatDate(data.updatedDate)}</>}
+      </p>
+      {
+        data.tags?.length > 0 && (
+          <p class="mt-2">
+            {data.tags.map((t) => (
+              <a
+                class="underline mr-2"
+                href={`/health-tips/tag/${encodeURIComponent(t)}/`}
+              >
+                #{t}
+              </a>
+            ))}
+          </p>
+        )
+      }
+      {
+        data.heroImage && (
+          <img class="mt-6 rounded-lg" src={data.heroImage} alt="" />
+        )
+      }
+      <p class="text-slate-700 mt-4">{data.description}</p>
+      <link rel="canonical" href={canonical.href} />
+      <meta property="og:title" content={data.title} />
+      <meta property="og:description" content={data.description} />
+      {data.heroImage && <meta property="og:image" content={data.heroImage} />}
+      <meta name="twitter:card" content="summary_large_image" />
+    </header>
+
+    <Content />
+  </article>
+</Layout>
