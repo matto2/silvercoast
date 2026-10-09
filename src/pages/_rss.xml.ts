@@ -8,7 +8,7 @@ export async function GET(context) {
 
   return rss({
     title: "Silver Coast Fitness — Health Tips",
-    description: "Gentle, effective fitness for adults 55+ in Monterey Bay.",
+    description: "Balance and fall prevention tips for adults 55+ in Santa Cruz County.",
     site: context.site ?? new URL("/", context.request.url),
     items: posts.map(({ id, data }) => ({
       link: `/health-tips/${id}/`,
