@@ -1,6 +1,6 @@
 ---
 import Button from "./Button.astro";
-const { headline, subhead, text, photo1, buttontext, buttonlink } = Astro.props;
+const { headline, text, subtext, photo1, buttontext, buttonlink } = Astro.props;
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -10,22 +10,22 @@ const { headline, subhead, text, photo1, buttontext, buttonlink } = Astro.props;
     >
       {headline}
     </h1>
-    {
-      subhead && (
-        <h2 class="text-2xl md:text-3xl text-center md:text-left pb-0 font-semibold text-brand-primary mb-6">
-          {subhead}
-        </h2>
-      )
-    }
     <div class="block md:hidden mask-blob w-full h-full mb-6">
-      <img src={photo1.src} alt="photo1" class="w-full h-full object-cover" />
+      <img src={photo1.src} alt="Two women doing a standing yoga stretch on the beach" class="w-full h-full object-cover" />
     </div>
     <p class="text-lg md:text-xl text-left text-text-medium">
       {text}
     </p>
+    {
+      subtext && (
+        <p class="text-lg md:text-xl text-left text-text-medium mt-4">
+          {subtext}
+        </p>
+      )
+    }
     <Button text={buttontext} link={buttonlink} />
   </div>
   <div class="hidden md:block mask-blob w-full h-full">
-    <img src={photo1.src} alt="photo1" class="w-full h-full object-cover" />
+    <img src={photo1.src} alt="Two women doing a standing yoga stretch on the beach" class="w-full h-full object-cover" />
   </div>
 </div>

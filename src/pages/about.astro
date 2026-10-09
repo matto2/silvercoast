@@ -1,67 +1,45 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import biopic from "../assets/tamra.png";
-import Nav from "../components/Nav.astro";
 import { Icon } from "astro-icon/components";
-
-const pageTitle = "About";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-  <Nav currentPage="about" />
-  <!-- <h2 class="text-3xl md:text-5xl font-bold mt-16 text-text-dark">
-    {pageTitle}
-  </h2> -->
-  <!-- <h2
-    class="text-center text-4xl md:text-5xl font-bold mt-16 text-brand-primary"
-  >
-    About
-  </h2> -->
-  <!-- <h2
-    class="text-center text-4xl md:text-5xl font-bold mt-16 text-brand-primary"
-  >
-    About Us
-  </h2> -->
+<Layout title="About | Silver Coast Fitness">
   <div class="max-w-5xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-auto">
       <div class="grid place-content-center">
         <img
           src={biopic.src}
-          alt="tamra-pic"
+          alt="Tamra Ancona"
           class="w-60 h-60 md:w-80 md:h-80 rounded-full mx-auto md:mt-20"
         />
       </div>
       <div class="grid place-content-center">
-        <h3 class="text-2xl font-bold mt-2 mb-4 md:mt-16 text-text-dark">
+        <h1 class="text-2xl font-bold mt-2 mb-4 md:mt-16 text-text-dark">
           Tamra Ancona, PTA
-        </h3>
+        </h1>
         <p class="md:text-lg text-left text-text-medium mb-4">
-          With over 30 years of experience as a Physical Therapist Assistant, I
-          specialize in balance training and fall prevention, helping older
-          adults stay steady, strong, and independent, while also supporting
-          individuals of all ages. I spent 15
-          years working in home health care, providing therapy tailored to each
-          client’s needs.
-
-          <p class="md:text-lg text-left text-text-medium">
-            In 2023, I founded Silver Coast Fitness to bring fitness and
-            movement classes directly to clients, working with them in their
-            homes or outdoor spaces, where staying steady matters most. My
-            expertise includes balance and fall prevention, recovery and
-            rehabilitation after hip and knee replacements, cardiac conditions,
-            and generalized weakness. I am certified in Basic Life Support (BLS)
-            and Cardiopulmonary Resuscitation (CPR) and have extensive
-            experience creating personalized plans to improve balance,
-            strength, mobility, and overall quality of life.
-          </p>
-          <a href="https://www.linkedin.com/in/tamra-ancona-06456065">
-            <Icon name="linkedin" class="w-8 h-8 mt-4 text-sky-600" />
-          </a>
+          I’m a Physical Therapist Assistant with over 30 years of experience,
+          including 15 years working in home health care.
         </p>
+        <p class="md:text-lg text-left text-text-medium mb-4">
+          In 2023, I founded Silver Coast Fitness to offer friendly movement
+          classes for older adults, with a focus on walking, gentle strength
+          and balance exercises, and building an active routine. I am
+          certified in Basic Life Support (BLS) and Cardiopulmonary
+          Resuscitation (CPR).
+        </p>
+        <p class="md:text-lg text-left text-text-dark">
+          Silver Coast Fitness provides movement classes and general fitness
+          guidance—not physical therapy, rehabilitation, or medical care.
+        </p>
+        <a
+          href="https://www.linkedin.com/in/tamra-ancona-06456065"
+          aria-label="Tamra Ancona on LinkedIn"
+        >
+          <Icon name="linkedin" class="w-8 h-8 mt-4 text-sky-600" />
+        </a>
       </div>
     </div>
-  </div></Layout
->
+  </div>
+</Layout>

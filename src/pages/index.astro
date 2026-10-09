@@ -1,92 +1,90 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import photo1 from "../assets/photo1.jpg";
-import { Image } from "astro:assets";
-import Nav from "../components/Nav.astro";
 import Card from "../components/Card.astro";
-import Button from "../components/Button.astro";
 import BigContactCard from "../components/BigContactCard.astro";
 import Hero from "../components/Hero.astro";
-import ReviewCard from "../components/ReviewCard.astro";
 import pain from "../assets/pain.jpg";
 import personal from "../assets/personal.jpg";
 import group from "../assets/group.jpg";
 ---
 
 <Layout>
-  <Nav currentPage="home" />
-
   <Hero
     headline="Move Well. Feel Strong."
-    subhead="Personalized Fitness for Older Adults in Santa Cruz County"
-    `
-    text={`At Silver Coast Fitness, we help older adults in Santa Cruz County
-    stay steady on their feet, lower their risk of falling, and keep their
-    independence. Our personalized programs build the balance, strength, and
-    confidence you need to move safely through everyday life, whether that's
-    climbing stairs, walking the dog, or strolling along the coast. Take the
-    first step toward feeling steadier today!`}
-    `
+    text="Friendly movement classes for older adults in Santa Cruz County, with a focus on walking, gentle strength and balance exercises, and building an active routine."
+    subtext="Whether you’re joining for yourself or helping a parent find a class, Silver Coast Fitness offers encouragement to keep moving at a comfortable pace."
     photo1={photo1}
-    buttontext="Book a Free Balance Consultation"
-    buttonlink="/contact"
+    buttontext="Explore Our Classes"
+    buttonlink="#classes"
   />
 
   <h2
-    class="text-center text-4xl md:text-5xl font-bold mt-16 text-brand-primary"
+    id="classes"
+    class="text-center text-4xl md:text-5xl font-bold mt-16 text-brand-primary scroll-mt-8"
   >
-    Our Services
+    Our Classes
   </h2>
 
   <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-6">
     <!-- Block 1 -->
     <Card
       img={group}
-      alt="stuff here"
-      title="Small Group Balance Classes"
-      text="Practice balance, coordination, and strength in a small, supportive group. Each class builds the steadiness and confidence that help prevent falls, and it's a fun, social way to stay motivated."
+      alt="Older man and a woman stretching their arms overhead together during an indoor exercise class"
+      title="Movement Classes"
+      text="Friendly classes built around simple, everyday movement. Come for the exercise, enjoy the company, and move at a pace that feels comfortable to you."
     />
     <!-- Block 2 -->
     <Card
-      img={personal}
-      alt="stuff here"
-      title="Personalized Fall Prevention"
-      text="One-on-one programs designed around your balance, strength, and goals. Sessions take place in your home or outdoors, so you practice staying steady in the places where it matters most."
+      img={pain}
+      alt="Smiling older couple standing in a garden, each holding a rolled-up exercise mat"
+      title="Walking & Everyday Activity"
+      text="Walking is one of the simplest ways to stay active. Get encouragement and general guidance on making walking and everyday movement a regular part of your week, in a way that fits your interests."
     />
     <!-- Block 3 -->
     <Card
-      img={pain}
-      alt="stuff here"
-      title="Pain Management"
-      text="Pain can make you move less and feel less steady. Our targeted exercises help ease chronic pain so you can move freely, stay active, and keep your balance, always at a pace that feels comfortable for you."
+      img={personal}
+      alt="Smiling older man in a blue t-shirt lifting a pair of light hand weights"
+      title="Strength & Balance"
+      text="Gentle strength and balance exercises that relate to the things you do every day, like getting up from a chair or carrying groceries. Exercises can be adjusted to suit you."
     />
   </section>
 
-  <!-- <h2
-    class="text-center text-4xl md:text-5xl font-bold mt-4 text-brand-primary"
-  >
-    Customer Reviews
-  </h2>
-  <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-6">
-    <ReviewCard
-      reviewhead="Feeling way better!"
-      text="Silver Coast Fitness has transformed my fitness journey. The personalized programs are exactly what I needed to stay active and independent."
-      name="John D."
-    />
-    <ReviewCard
-      reviewhead="Incredible support!"
-      text="Tamra's expertise and dedication have made a huge difference in my recovery. I'm stronger and more confident than ever."
-      name="Sarah M."
-    />
-    <ReviewCard
-      reviewhead="Life-changing experience!"
-      text="The small group classes are fun and motivating. I've met great people and improved my overall health significantly."
-      name="Michael R."
-    />
-  </section> -->
+  <section class="max-w-3xl mx-auto px-6 mt-12 mb-8">
+    <h2
+      class="text-center text-3xl md:text-4xl font-bold text-brand-primary mb-6"
+    >
+      A little encouragement to keep moving
+    </h2>
+    <p class="text-lg md:text-xl text-text-medium mb-4">
+      Sometimes a change in routine makes it harder to stay active. Perhaps
+      home health visits have ended, you’ve been spending more time sitting, or
+      you’d simply enjoy some company and encouragement.
+    </p>
+    <p class="text-lg md:text-xl text-text-medium">
+      Our movement classes offer a welcoming way to add activity to your week,
+      with simple exercises and general guidance focused on everyday movement.
+    </p>
+  </section>
 
   <BigContactCard
-    title="Feel Steadier on Your Feet"
-    text="Book a Free Balance Consultation"
-  />
+    title="Looking for an activity your parent will enjoy?"
+    text="Ask About Our Classes"
+  >
+    <div class="max-w-3xl px-2 md:px-6 mt-6">
+      <p class="text-lg md:text-xl text-text-medium mb-4">
+        You may be looking for a friendly class that encourages your parent to
+        move more, enjoy company, and build a regular routine.
+      </p>
+      <p class="text-lg md:text-xl text-text-medium">
+        Silver Coast Fitness welcomes inquiries from family members, while
+        keeping each participant’s interests and preferences at the center.
+      </p>
+    </div>
+  </BigContactCard>
+
+  <p class="max-w-3xl mx-auto px-6 mt-4 text-center text-base md:text-lg text-text-dark">
+    Silver Coast Fitness provides movement classes and general fitness
+    guidance—not physical therapy, rehabilitation, or medical care.
+  </p>
 </Layout>

@@ -1,15 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import photo1 from "../assets/photo1.jpg";
-import { Image } from "astro:assets";
-import Nav from "../components/Nav.astro";
 ---
 
-<Layout>
-  <Nav currentPage="contact" />
+<Layout title="Contact | Silver Coast Fitness">
   <form
     name="contact"
+    method="POST"
     netlify
+    netlify-honeypot="bot-field"
     class="p-6 md:p-12 bg-stone-100 rounded-3xl max-w-4xl mx-auto md:mt-12 mb-16"
   >
     <p class="hidden">
@@ -17,9 +15,9 @@ import Nav from "../components/Nav.astro";
         Don’t fill this out if you’re human: <input name="bot-field" />
       </label>
     </p>
-    <h3 class="text-2xl font-bold text-text-dark mb-6 pt-0">
-      Contact us for a free balance consultation or with any questions!
-    </h3>
+    <h1 class="text-2xl font-bold text-text-dark mb-6 pt-0">
+      Contact us about our classes or with any questions!
+    </h1>
     <!-- Name Input -->
     <div class="flex flex-col mb-6">
       <label for="name" class="text-text-dark font-semibold mb-2">Name</label>

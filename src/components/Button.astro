@@ -2,10 +2,9 @@
 const { text, link } = Astro.props;
 ---
 
-<a href={link}>
-  <button
-    class="bg-brand-secondary text-text-light font-bold py-2 px-16 rounded-full hover:bg-brand-secondaryDark py-3 my-8 md:w-96 w-full"
-  >
-    {text}
-  </button>
+<a
+  href={link}
+  class="inline-block text-center bg-brand-secondary text-text-light font-bold px-16 py-3 rounded-full hover:bg-brand-secondaryDark my-8 md:w-96 w-full"
+>
+  {text}
 </a>

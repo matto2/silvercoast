@@ -1,11 +1,9 @@
 ---
 import Layout from "./Layout.astro";
-import Nav from "../components/Nav.astro";
 
 const { title } = Astro.props;
 ---
 
-<Layout>
-  <Nav currentPage="health-tips" />
+<Layout title={title ? `${title} | Silver Coast Fitness` : undefined}>
   <slot />
 </Layout>

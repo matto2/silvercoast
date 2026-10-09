@@ -9,5 +9,6 @@ const { title, text } = Astro.props;
   >
     {title}
   </h2>
+  <slot />
   <Button text={text} link="/contact" />
 </div>
