@@ -6,6 +6,22 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply text-lg leading-relaxed text-text-dark;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 3px solid var(--brand-secondary);
+    outline-offset: 2px;
+  }
+
+  footer a:focus-visible {
+    outline-color: #ffffff;
+  }
+
   h1,
   h2,
   h3,
@@ -17,11 +33,11 @@
 }
 
 :root {
-  --brand-primary: #a8a29e;
+  --brand-primary: #78716c;
   --brand-secondary: #772eb8;
   --brand-accent: #005a9c;
   --text-light: #f5f5f4;
-  --text-medium: #78716c;
+  --text-medium: #57534e;
   --text-dark: #44403c;
   --brand-secondaryDark: #62219c;
 }

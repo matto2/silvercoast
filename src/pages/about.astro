@@ -1,43 +1,53 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import biopic from "../assets/tamra.png";
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 ---
 
-<Layout title="About | Silver Coast Fitness">
+<Layout
+  title="About | Silver Coast Fitness"
+  description="Meet Tamra Ancona, PTA — over 30 years helping people move with confidence, now leading friendly movement classes for older adults in Santa Cruz County."
+>
   <div class="max-w-5xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-auto">
       <div class="grid place-content-center">
-        <img
-          src={biopic.src}
+        <Image
+          src={biopic}
           alt="Tamra Ancona"
+          width={640}
           class="w-60 h-60 md:w-80 md:h-80 rounded-full mx-auto md:mt-20"
         />
       </div>
       <div class="grid place-content-center">
-        <h1 class="text-2xl font-bold mt-2 mb-4 md:mt-16 text-text-dark">
+        <h1 class="text-3xl font-bold mt-2 mb-4 md:mt-16 text-text-dark">
           Tamra Ancona, PTA
         </h1>
-        <p class="md:text-lg text-left text-text-medium mb-4">
+        <p class="text-lg leading-relaxed text-left text-text-medium max-w-prose mb-4">
           I’m a Physical Therapist Assistant with over 30 years of experience,
           including 15 years working in home health care.
         </p>
-        <p class="md:text-lg text-left text-text-medium mb-4">
+        <p class="text-lg leading-relaxed text-left text-text-medium max-w-prose mb-4">
           In 2023, I founded Silver Coast Fitness to offer friendly movement
           classes for older adults, with a focus on walking, gentle strength
           and balance exercises, and building an active routine. I am
           certified in Basic Life Support (BLS) and Cardiopulmonary
           Resuscitation (CPR).
         </p>
-        <p class="md:text-lg text-left text-text-dark">
+        {/* TODO: add 2–3 sentences on why Tamra started Silver Coast Fitness and her Santa Cruz connection. */}
+        <p class="text-lg leading-relaxed text-left text-text-dark max-w-prose">
           Silver Coast Fitness provides movement classes and general fitness
           guidance—not physical therapy, rehabilitation, or medical care.
         </p>
         <a
           href="https://www.linkedin.com/in/tamra-ancona-06456065"
-          aria-label="Tamra Ancona on LinkedIn"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 min-h-11 mt-4 font-semibold text-brand-secondary underline underline-offset-4 hover:text-brand-secondaryDark"
         >
-          <Icon name="linkedin" class="w-8 h-8 mt-4 text-sky-600" />
+          <Icon name="linkedin" class="w-6 h-6" fill="currentColor" aria-hidden="true" />
+          Connect with Tamra on LinkedIn
+          <span class="sr-only">(opens in a new tab)</span>
         </a>
       </div>
     </div>

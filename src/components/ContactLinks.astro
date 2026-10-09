@@ -4,9 +4,9 @@ import { contact } from "../lib/contact";
 const { class: className = "" } = Astro.props;
 ---
 
-<ul class={`flex flex-wrap items-center gap-x-6 gap-y-2 ${className}`}>
+<ul class={`flex flex-wrap items-center gap-x-6 gap-y-1 ${className}`}>
   <li>
-    <a href={contact.phoneHref} class="inline-flex items-center gap-2 hover:underline">
+    <a href={contact.phoneHref} class="inline-flex items-center gap-2 min-h-11 hover:underline">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -26,7 +26,7 @@ const { class: className = "" } = Astro.props;
     </a>
   </li>
   <li>
-    <a href={`mailto:${contact.email}`} class="inline-flex items-center gap-2 hover:underline">
+    <a href={`mailto:${contact.email}`} class="inline-flex items-center gap-2 min-h-11 hover:underline">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

@@ -26,7 +26,10 @@ import { navItems, isCurrent } from "../lib/nav";
               <a
                 href={href}
                 aria-current={current ? "page" : undefined}
-                class={current ? "font-bold text-brand-secondary" : "text-text-dark"}
+                class:list={[
+                  "inline-flex items-center min-h-11 px-1",
+                  current ? "font-bold text-brand-secondary" : "text-text-dark hover:text-brand-secondary",
+                ]}
               >
                 {name}
               </a>

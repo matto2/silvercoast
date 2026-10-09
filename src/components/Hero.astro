@@ -1,31 +1,43 @@
 ---
+import { Image } from "astro:assets";
 import Button from "./Button.astro";
-const { headline, text, subtext, photo1, buttontext, buttonlink } = Astro.props;
+const { headline, text, subtext, photo, alt, buttontext, buttonlink } =
+  Astro.props;
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-  <div class="grid place-content-center">
+<!--
+  One image for every screen size. On mobile the text column uses
+  display: contents so the photo can sit between the headline and the intro.
+-->
+<div class="flex flex-col md:grid md:grid-cols-2 md:gap-12">
+  <div class="contents md:grid md:place-content-center">
     <h1
-      class="text-6xl md:text-7xl xl:text-8xl text-center md:text-left pb-0 font-bold text-brand-secondary font-serif mb-8 md:mt-12"
+      class="order-1 text-6xl md:text-7xl xl:text-8xl text-center md:text-left pb-0 font-bold text-brand-secondary font-serif mb-8 md:mt-12"
     >
       {headline}
     </h1>
-    <div class="block md:hidden mask-blob w-full h-full mb-6">
-      <img src={photo1.src} alt="Older woman doing a standing side stretch on a beach, guided by an instructor" class="w-full h-full object-cover" />
-    </div>
-    <p class="text-lg md:text-xl text-left text-text-medium">
+    <p class="order-3 text-lg md:text-xl leading-relaxed text-left text-text-medium max-w-prose">
       {text}
     </p>
     {
       subtext && (
-        <p class="text-lg md:text-xl text-left text-text-medium mt-4">
+        <p class="order-3 text-lg md:text-xl leading-relaxed text-left text-text-medium mt-4 max-w-prose">
           {subtext}
         </p>
       )
     }
-    <Button text={buttontext} link={buttonlink} />
+    <div class="order-3">
+      <Button text={buttontext} link={buttonlink} />
+    </div>
   </div>
-  <div class="hidden md:block mask-blob w-full h-full">
-    <img src={photo1.src} alt="Older woman doing a standing side stretch on a beach, guided by an instructor" class="w-full h-full object-cover" />
+  <div class="order-2 mask-blob w-full h-full mb-6 md:mb-0">
+    <Image
+      src={photo}
+      alt={alt}
+      widths={[600, 900, 1400]}
+      sizes="(min-width: 768px) 50vw, 100vw"
+      class="w-full h-full object-cover"
+      loading="eager"
+    />
   </div>
 </div>

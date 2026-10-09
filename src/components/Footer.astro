@@ -3,16 +3,16 @@ import { navItems } from "../lib/nav";
 import ContactLinks from "./ContactLinks.astro";
 ---
 
-<footer class="bg-brand-secondary text-text-light text-sm py-6 mt-12">
+<footer class="bg-brand-secondary text-text-light text-lg py-6 mt-12">
   <div class="container mx-auto text-center space-y-4">
     <nav aria-label="Footer">
-      <ul class="flex justify-center space-x-6 text-lg">
+      <ul class="flex flex-wrap justify-center gap-x-4 text-lg">
         {
           navItems.map(({ name, href }) => (
             <li>
               <a
                 href={href}
-                class="hover:bg-brand-secondaryDark hover:text-white px-3 py-1 rounded transition"
+                class="inline-flex items-center min-h-11 px-3 rounded hover:bg-brand-secondaryDark hover:text-white transition"
               >
                 {name}
               </a>
@@ -22,7 +22,7 @@ import ContactLinks from "./ContactLinks.astro";
       </ul>
     </nav>
 
-    <ContactLinks class="justify-center text-base" />
+    <ContactLinks class="justify-center" />
 
     <p>
       &copy; {new Date().getFullYear()} Silver Coast Fitness. All rights reserved.

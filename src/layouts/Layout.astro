@@ -1,23 +1,41 @@
 ---
 import "../styles/main.css";
+import { getImage } from "astro:assets";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import heroPhoto from "../assets/home/hero.jpg";
 
 const {
   title = "Silver Coast Fitness | Movement Classes for Older Adults",
   description = "Friendly movement classes for older adults in Santa Cruz County, with a focus on walking, gentle strength and balance exercises, and building an active routine.",
 } = Astro.props;
+
+const site = Astro.site ?? Astro.url;
+const pageUrl = new URL(Astro.url.pathname, site).href;
+const ogImage = await getImage({ src: heroPhoto, width: 1200, format: "jpg" });
+const ogImageUrl = new URL(ogImage.src, site).href;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={pageUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Silver Coast Fitness" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <slot name="head" />
   </head>
 
   <body class="bg-white">

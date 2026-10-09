@@ -1,9 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ContactLinks from "../components/ContactLinks.astro";
+
+const inputClass =
+  "border border-stone-500 rounded-lg p-3 text-lg bg-white text-text-dark";
 ---
 
-<Layout title="Contact | Silver Coast Fitness">
+<Layout
+  title="Contact | Silver Coast Fitness"
+  description="Questions about Silver Coast Fitness movement classes for older adults in Santa Cruz County? Call, email, or send a message."
+>
+  <!-- Submitted to Netlify Forms. Netlify reads the field names from this
+       HTML at deploy time, so any field added here is captured automatically. -->
   <form
     name="contact"
     method="POST"
@@ -11,42 +19,82 @@ import ContactLinks from "../components/ContactLinks.astro";
     netlify-honeypot="bot-field"
     class="p-6 md:p-12 bg-stone-100 rounded-3xl max-w-4xl mx-auto md:mt-12 mb-16"
   >
-    <p class="hidden">
+    <!-- Spam trap: hidden from everyone; bots that fill it in are rejected. -->
+    <p class="hidden" aria-hidden="true">
       <label>
-        Don’t fill this out if you’re human: <input name="bot-field" />
+        Don’t fill this out if you’re human:
+        <input name="bot-field" tabindex="-1" autocomplete="off" />
       </label>
     </p>
+
     <h1 class="text-2xl font-bold text-text-dark mb-4 pt-0">
       Contact us about our classes or with any questions!
     </h1>
     <ContactLinks class="text-lg text-text-medium mb-8" />
-    <!-- Name Input -->
+
     <div class="flex flex-col mb-6">
       <label for="name" class="text-text-dark font-semibold mb-2">Name</label>
       <input
         type="text"
         name="name"
         id="name"
-        class="border border-stone-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-        placeholder="Your Name"
+        autocomplete="name"
+        class={inputClass}
         required
       />
     </div>
 
-    <!-- Email Input -->
     <div class="flex flex-col mb-6">
       <label for="email" class="text-text-dark font-semibold mb-2">Email</label>
       <input
         type="email"
         name="email"
         id="email"
-        class="border border-stone-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-        placeholder="Your Email"
+        autocomplete="email"
+        class={inputClass}
         required
       />
     </div>
 
-    <!-- Message Input -->
+    <div class="flex flex-col mb-6">
+      <label for="phone" class="text-text-dark font-semibold mb-2"
+        >Phone <span class="font-normal text-text-medium">(optional)</span></label
+      >
+      <input
+        type="tel"
+        name="phone"
+        id="phone"
+        autocomplete="tel"
+        class={inputClass}
+      />
+    </div>
+
+    <fieldset class="mb-6">
+      <legend class="text-text-dark font-semibold mb-2">
+        I’m asking for <span class="font-normal text-text-medium">(optional)</span>
+      </legend>
+      <div class="flex flex-col sm:flex-row sm:gap-8">
+        <label class="inline-flex items-center gap-3 min-h-11 text-text-dark">
+          <input
+            type="radio"
+            name="asking-for"
+            value="Myself"
+            class="w-5 h-5 accent-brand-secondary"
+          />
+          Myself
+        </label>
+        <label class="inline-flex items-center gap-3 min-h-11 text-text-dark">
+          <input
+            type="radio"
+            name="asking-for"
+            value="A family member"
+            class="w-5 h-5 accent-brand-secondary"
+          />
+          A family member
+        </label>
+      </div>
+    </fieldset>
+
     <div class="flex flex-col">
       <label for="message" class="text-text-dark font-semibold mb-2"
         >Message</label
@@ -55,16 +103,14 @@ import ContactLinks from "../components/ContactLinks.astro";
         name="message"
         id="message"
         rows="5"
-        class="border border-stone-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none"
-        placeholder="Your Message"
+        class={`${inputClass} resize-none`}
         required></textarea>
     </div>
 
-    <!-- Submit Button -->
     <div class="text-center mt-6">
       <button
         type="submit"
-        class="bg-brand-secondary text-text-light font-bold py-2 px-6 rounded-full hover:bg-brand-secondaryDark focus:ring-2 focus:ring-blue-600 focus:outline-none md:w-64 w-full"
+        class="bg-brand-secondary text-text-light font-bold py-3 px-6 rounded-full hover:bg-brand-secondaryDark md:w-64 w-full"
       >
         Send
       </button>
