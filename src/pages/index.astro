@@ -15,6 +15,8 @@ import walkingPhoto from "../assets/home/class-walking.jpg";
 import strengthPhoto from "../assets/home/class-strength.jpg";
 import tamraPhoto from "../assets/tamra.png";
 
+const towns = ["Santa Cruz", "Capitola", "Aptos", "Soquel", "Scotts Valley"];
+
 const localBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -22,11 +24,10 @@ const localBusiness = {
   url: Astro.site?.href,
   telephone: contact.phoneHref.replace("tel:", ""),
   email: contact.email,
-  // TODO: add the individual towns served once confirmed.
-  areaServed: {
-    "@type": "AdministrativeArea",
-    name: "Santa Cruz County, California",
-  },
+  areaServed: [
+    ...towns.map((name) => ({ "@type": "City", name: `${name}, California` })),
+    { "@type": "AdministrativeArea", name: "Santa Cruz County, California" },
+  ],
 };
 ---
 
@@ -37,10 +38,9 @@ const localBusiness = {
     set:html={JSON.stringify(localBusiness)}
   />
 
-  {/* TODO: mention the towns served in the intro below (e.g. Santa Cruz, Capitola, Aptos...) once confirmed. */}
   <Hero
     headline="Move Well. Feel Strong."
-    text="Friendly movement classes for older adults in Santa Cruz County, with a focus on walking, gentle strength and balance exercises, and building an active routine."
+    text="Friendly movement classes for older adults in Santa Cruz, Capitola, Aptos, Soquel, and Scotts Valley, with a focus on walking, gentle strength and balance exercises, and building an active routine."
     subtext="Whether you’re joining for yourself or helping a parent find a class, Silver Coast Fitness offers encouragement to keep moving at a comfortable pace."
     photo={heroPhoto}
     alt="Older woman doing a standing side stretch on a beach, guided by an instructor"
