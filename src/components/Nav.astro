@@ -15,16 +15,9 @@ import { contact } from "../lib/contact";
       Silver Coast Fitness
     </span>
   </a>
-  <div class="md:flex md:flex-col md:items-end lg:flex-row lg:items-center lg:gap-12">
-    <a
-      href={contact.phoneHref}
-      class="flex justify-center items-center min-h-11 mt-2 md:mt-0 text-2xl font-bold text-brand-secondary hover:text-brand-secondaryDark"
-    >
-      Call {contact.phone}
-    </a>
   <nav aria-label="Main">
     <ul
-      class="flex justify-center md:justify-end space-x-6 md:space-x-12 text-xl px-4 md:px-0"
+      class="flex items-center justify-center md:justify-end space-x-2 min-[360px]:space-x-3 sm:space-x-6 md:space-x-12 text-lg sm:text-xl md:px-0"
     >
       {
         navItems.map(({ name, href }) => {
@@ -45,7 +38,14 @@ import { contact } from "../lib/contact";
           );
         })
       }
+      <li>
+        <a
+          href={contact.phoneHref}
+          class="inline-flex items-center min-h-11 px-3 min-[360px]:px-4 rounded-full whitespace-nowrap text-lg font-bold bg-brand-secondary text-text-light hover:bg-brand-secondaryDark"
+        >
+          Call Now
+        </a>
+      </li>
     </ul>
   </nav>
-  </div>
 </header>
