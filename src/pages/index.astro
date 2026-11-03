@@ -6,6 +6,7 @@ import Button from "../components/Button.astro";
 import BigContactCard from "../components/BigContactCard.astro";
 import Hero from "../components/Hero.astro";
 import Testimonials from "../components/Testimonials.astro";
+import InquiryForm from "../components/InquiryForm.astro";
 import { contact } from "../lib/contact";
 
 // Home page photos: replace these files with real session photos using the
@@ -17,6 +18,24 @@ import strengthPhoto from "../assets/home/class-strength.jpg";
 import tamraPhoto from "../assets/tamra.jpg";
 
 const towns = ["Santa Cruz", "Capitola", "Aptos", "Soquel", "Scotts Valley"];
+const townList = new Intl.ListFormat("en", { type: "conjunction" }).format(towns);
+
+const sessionDetails = [
+  { term: "Where", detail: "In your home, or outdoors on walking routes near you." },
+  { term: "Service area", detail: `${townList}.` },
+  { term: "Session length", detail: "30, 45, or 60 minutes." },
+  {
+    term: "Pricing",
+    detail:
+      "Starting at $45 per session with a package of ten 30-minute sessions. Call to discuss other session lengths and packages.",
+  },
+  { term: "Cancellation", detail: "Cancel with at least 24 hours’ notice for a full refund." },
+  {
+    term: "Who it’s for",
+    detail:
+      "Older adults who want to stay active. We’ll talk about your goals and whether sessions are a good fit during a first phone call.",
+  },
+];
 
 const localBusiness = {
   "@context": "https://schema.org",
@@ -40,24 +59,26 @@ const localBusiness = {
   />
 
   <Hero
-    headline="Move Well. Feel Strong."
-    text="Friendly, one-on-one movement sessions for older adults in Santa Cruz, Capitola, Aptos, Soquel, and Scotts Valley, with a focus on walking, gentle strength and balance exercises, and building an active routine."
-    subtext="Whether you’re joining for yourself or helping a parent find the right fit, Silver Coast Fitness offers encouragement to keep moving at a comfortable pace."
+    headline="Gentle fitness for older adults"
+    text="Strength, balance, and walking encouragement, one-on-one."
+    subtext={`Build a regular movement routine with friendly, one-on-one support. Silver Coast Fitness helps older adults in ${townList} stay active and independent through gentle strength exercises, balance practice, and walking, without an intimidating gym atmosphere.`}
     photo={heroPhoto}
     alt="Older woman doing a standing side stretch on a beach, guided by an instructor"
-    buttontext="See How It Works"
-    buttonlink="#sessions"
+    buttontext="Call to discuss getting started"
+    buttonlink={contact.phoneHref}
+    secondarytext="Sessions & pricing"
+    secondarylink="#pricing"
   />
 
   <h2
-    id="sessions"
+    id="services"
     class="text-center text-4xl md:text-5xl font-bold mt-16 text-brand-primary scroll-mt-8"
   >
-    One-on-One Sessions
+    Services
   </h2>
   <p class="text-center text-lg md:text-xl leading-relaxed text-text-medium max-w-prose mx-auto mt-4 px-6">
-    Every session is just you and your trainer, built around your goals, your
-    pace, and the activities you enjoy.
+    Fitness sessions built around your goals, your pace, and the activities you
+    enjoy.
   </p>
 
   <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-6">
@@ -65,24 +86,29 @@ const localBusiness = {
     <Card
       img={movementPhoto}
       alt="Smiling older woman with arms extended, rising from a wooden bench on a coastal bluff above the ocean"
-      title="Movement Made Simple"
-      text="Personal sessions focused on simple, everyday movement. We'll start where you are, move at a pace that feels comfortable, and build a routine you can keep up between visits."
+      title="Private Fitness Sessions"
+      text="One-on-one sessions built around your goals and comfort level, with gentle strength and balance exercises at a manageable pace."
     />
     <!-- Block 2 -->
     <Card
       img={walkingPhoto}
       alt="Smiling older woman walking with a rolling walker along a coastal path, with an instructor at her side"
-      title="Walking & Everyday Activity"
-      text="Walking is one of the simplest ways to stay active. Get encouragement and practical ideas for making walking and everyday movement a regular part of your week, in a way that fits your life."
+      title="Walking & Motivation"
+      text="Make regular movement part of your routine with friendly encouragement and walking at a comfortable pace. We help you set manageable goals and stay motivated, one step at a time."
     />
     <!-- Block 3 -->
     <Card
       img={strengthPhoto}
       alt="Smiling older man in a blue t-shirt lifting a pair of light hand weights"
-      title="Strength & Balance for Daily Life"
-      text="Gentle strength and balance exercises tied to the things you do every day, like getting up from a chair, climbing stairs, or carrying groceries. Every exercise is adjusted to suit you."
+      label="Coming soon"
+      title="Small-Group Fitness"
+      text="Small-group sessions are in the works. Ask to be notified."
     />
   </section>
+
+  <p class="text-lg leading-relaxed text-text-dark max-w-prose mx-auto px-6">
+    Silver Coast Fitness provides general fitness instruction and exercise encouragement. We do not provide physical therapy, medical diagnosis, injury rehabilitation, or treatment for medical conditions.
+  </p>
 
   <div class="text-center px-6">
     <Button text="Ask About a Session" link="/contact" />
@@ -96,20 +122,38 @@ const localBusiness = {
     </h2>
     <p class="text-lg md:text-xl leading-relaxed text-text-medium max-w-prose mx-auto mb-4">
       Sometimes a change in routine makes it harder to stay active. Perhaps
-      home health visits have ended, you’ve been spending more time sitting, or
-      you’d simply enjoy some company and encouragement.
-    </p>
-    <p class="text-lg md:text-xl leading-relaxed text-text-medium max-w-prose mx-auto mb-4">
-      One-on-one sessions offer a welcoming way to add activity to your week,
-      with simple exercises and general guidance focused on everyday movement.
+      you’ve been spending more time sitting, or you’d simply enjoy some company
+      and encouragement.
     </p>
     <p class="text-lg md:text-xl leading-relaxed text-text-medium max-w-prose mx-auto">
-      Silver Coast Fitness provides one-on-one movement sessions and general
-      fitness guidance—not physical therapy, rehabilitation, or medical care.
+      One-on-one sessions offer a welcoming way to add activity to your week,
+      with simple exercises and general guidance focused on everyday movement.
     </p>
   </section>
 
   <section
+    id="pricing"
+    class="bg-stone-100 rounded-3xl max-w-4xl mx-auto p-6 md:p-12 mt-12 mb-12 scroll-mt-8"
+  >
+    <h2
+      class="text-center text-3xl md:text-4xl font-bold text-brand-primary mb-8"
+    >
+      Sessions &amp; pricing
+    </h2>
+    <dl class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+      {
+        sessionDetails.map(({ term, detail }) => (
+          <div>
+            <dt class="font-bold text-text-dark">{term}</dt>
+            <dd class="mt-1 text-text-medium">{detail}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </section>
+
+  <section
+    id="about-tamra"
     class="max-w-4xl mx-auto px-6 mt-12 mb-12 flex flex-col md:flex-row items-center gap-8"
   >
     <Image
@@ -120,17 +164,16 @@ const localBusiness = {
     />
     <div class="text-center md:text-left">
       <p class="text-text-medium font-semibold uppercase tracking-wide text-lg">
-        Meet our founder
+        About Tamra
       </p>
       <h2 class="text-3xl md:text-4xl font-bold text-brand-primary mt-1 mb-4">
-        Programs designed by Tamra Ancona, PTA
+        Tamra Ancona
       </h2>
       <p class="text-lg md:text-xl leading-relaxed text-text-medium max-w-prose">
-        Tamra is a Physical Therapist Assistant with over 30 years of
-        experience, including 20 years in home health care. In 2023, she
-        founded Silver Coast Fitness to offer friendly, one-on-one movement
-        sessions for older adults. Every program is designed by Tamra and
-        delivered by her or a trainer she has personally prepared.
+        Tamra Ancona brings 30 years of experience as a licensed Physical
+        Therapist Assistant, including 25 years in home health, to her work with
+        older adults. At Silver Coast Fitness, she offers friendly, one-on-one
+        fitness sessions focused on strength, balance, and walking.
       </p>
       <a
         href="/about"
@@ -150,7 +193,7 @@ const localBusiness = {
     <div class="max-w-prose px-2 md:px-0 mt-6">
       <p class="text-lg md:text-xl leading-relaxed text-text-medium mb-4">
         You may be looking for a friendly, personal way to help your parent move
-        more, feel steadier, and build a regular routine.
+        more and build a regular routine.
       </p>
       <p class="text-lg md:text-xl leading-relaxed text-text-medium">
         Silver Coast Fitness welcomes inquiries from family members, while
@@ -158,4 +201,6 @@ const localBusiness = {
       </p>
     </div>
   </BigContactCard>
+
+  <InquiryForm />
 </Layout>

@@ -1,12 +1,12 @@
 ---
 import { contact } from "../lib/contact";
 
-const { class: className = "" } = Astro.props;
+const { class: className = "", phoneClass = "" } = Astro.props;
 ---
 
 <ul class={`flex flex-wrap items-center gap-x-6 gap-y-1 ${className}`}>
   <li>
-    <a href={contact.phoneHref} class="inline-flex items-center gap-2 min-h-11 hover:underline">
+    <a href={contact.phoneHref} class={`inline-flex items-center gap-2 min-h-11 hover:underline ${phoneClass}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

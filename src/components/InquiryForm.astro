@@ -1,0 +1,95 @@
+---
+import { contact } from "../lib/contact";
+
+const inputClass =
+  "border border-stone-500 rounded-lg p-3 text-lg bg-white text-text-dark";
+---
+
+<!-- Submitted to Netlify Forms under its own form name, so it shows up
+     separately from the /contact form in the Netlify dashboard. -->
+<form
+  id="inquiry"
+  name="inquiry"
+  method="POST"
+  netlify
+  netlify-honeypot="bot-field"
+  class="p-6 md:p-12 bg-stone-100 rounded-3xl max-w-4xl mx-auto mt-12 mb-4 scroll-mt-8"
+>
+  <!-- Spam trap: hidden from everyone; bots that fill it in are rejected. -->
+  <p class="hidden" aria-hidden="true">
+    <label>
+      Don’t fill this out if you’re human:
+      <input name="bot-field" tabindex="-1" autocomplete="off" />
+    </label>
+  </p>
+
+  <h2 class="text-3xl md:text-4xl font-bold text-brand-primary mb-2">
+    Send an inquiry
+  </h2>
+  <p class="text-lg text-text-medium mb-8">
+    Prefer to talk? Call{" "}
+    <a
+      href={contact.phoneHref}
+      class="font-semibold text-brand-secondary underline underline-offset-4 hover:text-brand-secondaryDark"
+      >{contact.phone}</a
+    >.
+  </p>
+
+  <div class="flex flex-col mb-6">
+    <label for="inquiry-name" class="text-text-dark font-semibold mb-2">Name</label>
+    <input
+      type="text"
+      name="name"
+      id="inquiry-name"
+      autocomplete="name"
+      class={inputClass}
+      required
+    />
+  </div>
+
+  <div class="flex flex-col mb-6">
+    <label for="inquiry-phone" class="text-text-dark font-semibold mb-2">Phone</label>
+    <input
+      type="tel"
+      name="phone"
+      id="inquiry-phone"
+      autocomplete="tel"
+      class={inputClass}
+      required
+    />
+  </div>
+
+  <div class="flex flex-col mb-6">
+    <label for="inquiry-email" class="text-text-dark font-semibold mb-2"
+      >Email <span class="font-normal text-text-medium">(optional)</span></label
+    >
+    <input
+      type="email"
+      name="email"
+      id="inquiry-email"
+      autocomplete="email"
+      class={inputClass}
+    />
+  </div>
+
+  <div class="flex flex-col">
+    <label for="inquiry-message" class="text-text-dark font-semibold mb-2"
+      >Message</label
+    >
+    <textarea
+      name="message"
+      id="inquiry-message"
+      rows="4"
+      class={`${inputClass} resize-none`}
+      required></textarea>
+  </div>
+
+  <div class="text-center mt-6">
+    <button
+      type="submit"
+      class="bg-brand-secondary text-text-light font-bold py-3 px-6 rounded-full hover:bg-brand-secondaryDark md:w-64 w-full"
+    >
+      Send
+    </button>
+  </div>
+</form>

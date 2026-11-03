@@ -1,8 +1,17 @@
 ---
 import { Image } from "astro:assets";
 import Button from "./Button.astro";
-const { headline, text, subtext, photo, alt, buttontext, buttonlink } =
-  Astro.props;
+const {
+  headline,
+  text,
+  subtext,
+  photo,
+  alt,
+  buttontext,
+  buttonlink,
+  secondarytext,
+  secondarylink,
+} = Astro.props;
 ---
 
 <!--
@@ -28,6 +37,18 @@ const { headline, text, subtext, photo, alt, buttontext, buttonlink } =
     }
     <div class="order-3">
       <Button text={buttontext} link={buttonlink} />
+      {
+        secondarytext && (
+          <div class="-mt-4 mb-4 text-center md:text-left">
+            <a
+              href={secondarylink}
+              class="inline-flex items-center min-h-11 font-semibold text-brand-secondary underline underline-offset-4 hover:text-brand-secondaryDark"
+            >
+              {secondarytext}
+            </a>
+          </div>
+        )
+      }
     </div>
   </div>
   <div class="order-2 mask-blob w-full h-full mb-6 md:mb-0">
